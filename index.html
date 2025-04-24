@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Sazon del Mar</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-azul-oceano text-white">
+            <div class="container-fluid">
+                <h1 class="align-items-center"><i class="fas fa-anchor"></i> Sazon del Mar</h1>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end py-2" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="navbar-item mb-2 mb-lg-0">
+                            <a href="#inicio" class="navbar-link text-decoration-none me-3 text-blanco-nube">Inicio</a>
+                        </li>
+
+                        <li class="navbar-item mb-2 mb-lg-0">
+                            <a href="#menu" class="navbar-link text-decoration-none me-3 text-blanco-nube">Menu</a>
+                        </li>
+                        <li class="navbar-item mb-2 mb-lg-0">
+                            <a href="#contactos"
+                                class="navbar-link text-decoration-none me-3 text-blanco-nube">Contactos</a>
+                        </li>
+                        <li class="navbar-item mb-2 mb-lg-0">
+                            <a href="#nosotros" class="navbar-link text-decoration-none me-3 text-blanco-nube">Nosotros</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Inicio -->
+    <section id="inicio" class="hero-section d-flex align-items-center">
+        <div class="container text-center text-blanco-nube">
+            <h1 class="display-1 fw-bold">Sazón del Mar</h1>
+            <p class="lead">Frescura marina en cada bocado</p>
+            <a href="#reservas" class="btn btn-dorado btn-lg mt-3">Reserva Ahora</a>
+        </div>
+    </section>
+
+    <!-- Menu -->
+    <section id="menu" class="py-5 bg-blanco-nube">
+        <div class="container">
+            <h2 class="text-center mb-5">Nuestro Menú</h2>
+
+            <h5 class="text-center mb-3">Busca tus platos favoritos</h5>
+            <div class="text-center mb-4">
+                <button class="btn btn-outline-dark btn-sm m-1" onclick="filtrarMenu('todo')">Todo</button>
+                <button class="btn btn-outline-success btn-sm m-1" onclick="filtrarMenu('vegano')">Vegano</button>
+                <button class="btn btn-outline-warning btn-sm m-1" onclick="filtrarMenu('gluten-free')">Sin
+                    Gluten</button>
+                <button class="btn btn-outline-danger btn-sm m-1" onclick="filtrarMenu('picante')">Picante</button>
+                <button class="btn btn-outline-info btn-sm m-1" onclick="filtrarMenu('mariscos')">Mariscos</button>
+            </div>
+
+
+            <div class="row g-4" id="contenedor-menu">
+                <div class="col-md-4 item-menu" data-categorias="vegano gluten-free">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <img src="assets/ensalada-quinoa.jpg" class="card-img-top" alt="Ensalada de Quinoa">
+                        <div class="card-body">
+                            <h5 class="card-title">Ensalada de Quinoa</h5>
+                            <p class="card-text">Quinoa, aguacate, tomate cherry y aderezo de limón.</p>
+                            <span class="fw-bold text-primary">$10.99</span>
+                            <span class="badge bg-success ms-2">Vegano</span>
+                            <span class="badge bg-warning ms-2">Sin Gluten</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Plato 2 -->
+                <div class="col-md-4 item-menu" data-categorias="picante">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <img src="assets/tacos-pescado.jpg" class="card-img-top" alt="Tacos de Pescado">
+                        <div class="card-body">
+                            <h5 class="card-title">Tacos de Pescado</h5>
+                            <p class="card-text">Pescado empanizado, salsa picante y repollo morado.</p>
+                            <span class="fw-bold text-primary">$14.99</span>
+                            <span class="badge bg-danger ms-2">Picante</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg" id="contactos">
+        <div class="container bg-verde-agua rounded-5">
+            <div class="row align-items-center">
+                <div class="col col-12 col-lg-6 text-center">
+                    <img src="img/mapa.png" class="img-fluid" alt="mapa" style="width: 500px;">
+                </div>
+                <div class="col col-12 col-lg-6">
+                    <div class="d-flex flex-row align-items-center mb-3">
+                        <i class="fa fa-map-marker me-3 icono rounded-circle p-3 bg-azul-oceano fs-4 text-blanco-nube text-center"
+                            style="width: 55px;"></i>
+                        <div class="justify-content-center text-azul-oceano d-flex flex-column pt-3 ">
+                            <h2 class="lead">Ven, y prueba nuestra exquisita comida</h2>
+                            <p>Av.Avenida C.Calle #123</p>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row align-items-center mb-3">
+                        <i class="fas fa-phone me-3 icono rounded-circle p-3 bg-azul-oceano fs-4 text-blanco-nube text-center"
+                            style="width: 55px;"></i>
+                        <div class="justify-content-center text-azul-oceano d-flex flex-column pt-3 ">
+                            <h2 class="lead">Llamanos</h2>
+                            <p>+123456789</p>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row align-items-center mb-3">
+                        <i class="fas fa-envelope me-3 icono rounded-circle p-3 bg-azul-oceano fs-4 text-blanco-nube text-center"
+                            style="width: 55px;"></i>
+                        <div class="justify-content-center text-azul-oceano d-flex flex-column pt-3 ">
+                            <h2 class="lead">Envianos un mensaje de correo</h2>
+                            <p>correito@correo.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-gris-arena" id="nosotros">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-10 col-lg-6 text-center d-flex justify-content-center align-items-center">
+                    <p class="lead">En Sazón del Mar, celebramos la riqueza del mar con autenticidad y creatividad. Nuestro
+                        restaurante nació en 2015 como un pequeño sueño gastronómico en la costa, inspirado en los
+                        sabores vibrantes de la cocina marina peruana y fusión internacional. Hoy, somos reconocidos por
+                        transformar ingredientes frescos en experiencias memorables.</p>
+                </div>
+                <div class="col-0 col-lg-6 d-flex justify-content-center align-items-center">
+                    <img src="img/delfin.png" alt="delfin" class="img-fluid" style="width: 400px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="mt-auto bg-azul-oceano text-blanco-nube pt-5 pb-4">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="footer-about">
+                        <h5 class="text-uppercase fw-bold mb-4" style="letter-spacing: 1px;">Disfruta de estos fabulosos platos</h5>
+                        <p class="mb-4" style="line-height: 1.8;">Alegrate la vida con nuestra comida. ¡No puedes quedarte sin probarla!
+                        </p>
+                        <div class="d-flex align-items-center">
+                            <i class="fa-solid fa-fish me-3 fs-4 text-dorado-sol"></i>
+                            <span class="fw-light">Comida 100% de calidad</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna 2: Enlaces rápidos -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5 class="text-uppercase fw-bold mb-4" style="letter-spacing: 1px;">Accesos rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-3">
+                            <a href="#inicio"
+                                class="text-white text-decoration-none d-flex align-items-center hover-gold">
+                                <i class="fas fa-chevron-right me-2 small text-dorado-sol"></i> Inicio
+                            </a>
+                        </li>
+                        <li class="mb-3">
+                            <a href="#menu"
+                                class="text-white text-decoration-none d-flex align-items-center hover-gold">
+                                <i class="fas fa-chevron-right me-2 small text-dorado-sol"></i> Menu
+                            </a>
+                        </li>
+                        <li class="mb-3">
+                            <a href="#contactos"
+                                class="text-white text-decoration-none d-flex align-items-center hover-gold">
+                                <i class="fas fa-chevron-right me-2 small text-dorado-sol"></i> Contactos
+                            </a>
+                        </li>
+                        <li class="mb-3">
+                            <a href="#nosotros"
+                                class="text-white text-decoration-none d-flex align-items-center hover-gold">
+                                <i class="fas fa-chevron-right me-2 small text-dorado-sol"></i> Nosotros
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Columna 3: Redes sociales -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5 class="text-uppercase fw-bold mb-4" style="letter-spacing: 1px;">Síguenos</h5>
+                    <p class="mb-4">Conéctate con nosotros en redes sociales</p>
+                    <div class="social-icons">
+                        <a href="#"
+                            class="text-decoration-none text-blanco-nube me-3 bg-dorado-sol rounded-circle d-inline-flex align-items-center justify-content-center"
+                            style="width: 40px; height: 40px;">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#"
+                            class="text-decoration-none text-blanco-nube me-3 bg-dorado-sol rounded-circle d-inline-flex align-items-center justify-content-center"
+                            style="width: 40px; height: 40px;">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#"
+                            class="text-decoration-none text-blanco-nube me-3 bg-dorado-sol rounded-circle d-inline-flex align-items-center justify-content-center"
+                            style="width: 40px; height: 40px;">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#"
+                            class="text-decoration-none text-blanco-nube bg-dorado-sol rounded-circle d-inline-flex align-items-center justify-content-center"
+                            style="width: 40px; height: 40px;">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+
+                    <div class="mt-4">
+                        <h6 class="text-uppercase fw-bold mb-3">Suscríbete</h6>
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" id="btnEnviar" placeholder="Tu correo" aria-label="Tu correo">
+                            <button class="btn btn-warning text-white" type="button">Enviar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="my-4 bg-light opacity-75">
+
+            <div class="row">
+                <div class="col-md-12 text-center pt-2">
+                    <p class="mb-0">&copy; 2025 <span class="text-warning">Rocel Gerl</span>. Todos los derechos
+                        reservados.</p>
+                    <p class="small mt-2 mb-0">Diseñado con <i class="fas fa-heart text-danger"></i> para amantes de los mariscos</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
+
+    <script>
+        const platos = [
+            {
+                nombre: "Ensalada de Quinoa",
+                imagen: "ensalada-quinoa.jpg",
+                descripcion: "Quinoa, aguacate, tomate cherry y aderezo de limón.",
+                precio: 10.99,
+                categorias: ["vegano", "gluten-free"],
+                badges: [
+                    { texto: "Vegano", color: "bg-success" },
+                    { texto: "Sin Gluten", color: "bg-warning" }
+                ]
+            },
+            {
+                nombre: "Tacos de Pescado",
+                imagen: "tacos-pescado.jpg",
+                descripcion: "Pescado empanizado, salsa picante y repollo morado.",
+                precio: 14.99,
+                categorias: ["picante"],
+                badges: [
+                    { texto: "Picante", color: "bg-danger" }
+                ]
+            },
+            {
+                nombre: "Ceviche Mixto Premium",
+                imagen: "ceviche-mixto.jpg",
+                descripcion: "Mezcla de pescado, pulpo y langostinos en leche de tigre.",
+                precio: 18.99,
+                categorias: ["mariscos", "picante"],
+                badges: [
+                    { texto: "Mariscos", color: "bg-info" },
+                    { texto: "Picante", color: "bg-danger" }
+                ]
+            },
+            {
+                nombre: "Pulpo a la Gallega",
+                imagen: "pulpo-gallega.jpg",
+                descripcion: "Pulpo tierno con papas, pimentón ahumado y aceite de oliva.",
+                precio: 19.50,
+                categorias: ["mariscos", "gluten-free"],
+                badges: [
+                    { texto: "Mariscos", color: "bg-info" },
+                    { texto: "Sin Gluten", color: "bg-warning" }
+                ]
+            },
+            {
+                nombre: "Tiradito de Atún",
+                imagen: "tiradito-atun.jpg",
+                descripcion: "Láminas de atún con salsa de maracuyá y ají amarillo.",
+                precio: 17.75,
+                categorias: ["gluten-free"],
+                badges: [
+                    { texto: "Sin Gluten", color: "bg-warning" }
+                ]
+            },
+            {
+                nombre: "Risotto de Mariscos",
+                imagen: "risotto-mariscos.jpg",
+                descripcion: "Arroz cremoso con calamares, mejillones y azafrán.",
+                precio: 16.50,
+                categorias: ["mariscos", "gluten-free"],
+                badges: [
+                    { texto: "Mariscos", color: "bg-info" },
+                    { texto: "Sin Gluten", color: "bg-warning" }
+                ]
+            },
+            {
+                nombre: "Ceviche Verde",
+                imagen: "ceviche-verde.jpg",
+                descripcion: "Pescado marinado en leche de tigre de cilantro y pepino.",
+                precio: 15.25,
+                categorias: ["gluten-free"],
+                badges: [
+                    { texto: "Sin Gluten", color: "bg-warning" }
+                ]
+            },
+            {
+                nombre: "Tostadas de Camarón",
+                imagen: "tostadas-camaron.jpg",
+                descripcion: "Tostadas crocantes con camarón, aguacate y salsa chipotle.",
+                precio: 13.99,
+                categorias: ["mariscos", "picante"],
+                badges: [
+                    { texto: "Mariscos", color: "bg-info" },
+                    { texto: "Picante", color: "bg-danger" }
+                ]
+            },
+            {
+                nombre: "Cazuela de Mariscos",
+                imagen: "cazuela-mariscos.jpg",
+                descripcion: "Mezcla de mariscos en caldo picante con coco y hierbas.",
+                precio: 20.99,
+                categorias: ["mariscos", "picante"],
+                badges: [
+                    { texto: "Mariscos", color: "bg-info" },
+                    { texto: "Picante", color: "bg-danger" }
+                ]
+            },
+            {
+                nombre: "Tartar de Atún",
+                imagen: "tartar-atun.jpg",
+                descripcion: "Atún fresco con aguacate, mango y chips de camote.",
+                precio: 18.50,
+                categorias: ["gluten-free"],
+                badges: [
+                    { texto: "Sin Gluten", color: "bg-warning" }
+                ]
+            },
+            {
+                nombre: "Paella Marina",
+                imagen: "paella-marina.jpg",
+                descripcion: "Arroz con azafrán, langostinos, mejillones y calamares.",
+                precio: 22.99,
+                categorias: ["mariscos"],
+                badges: [
+                    { texto: "Mariscos", color: "bg-info" }
+                ]
+            },
+            {
+                nombre: "Ensalada de Algas",
+                imagen: "ensalada-algas.jpg",
+                descripcion: "Mezcla de algas wakame con sésamo y vinagreta de jengibre.",
+                precio: 11.50,
+                categorias: ["vegano", "gluten-free"],
+                badges: [
+                    { texto: "Vegano", color: "bg-success" },
+                    { texto: "Sin Gluten", color: "bg-warning" }
+                ]
+            },
+            {
+                nombre: "Cóctel de Camarones",
+                imagen: "coctel-camaron.jpg",
+                descripcion: "Camarones en salsa rosa con aguacate y galleta salada.",
+                precio: 14.25,
+                categorias: ["mariscos"],
+                badges: [
+                    { texto: "Mariscos", color: "bg-info" }
+                ]
+            }
+        ];
+
+        function generarMenu() {
+            const contenedor = document.getElementById('contenedor-menu');
+            contenedor.innerHTML = ''; // Limpiar contenedor
+
+            platos.forEach(plato => {
+                const badgesHTML = plato.badges.map(badge =>
+                    `<span class="badge ${badge.color} ms-2">${badge.texto}</span>`
+                ).join('');
+
+                const cardHTML = `
+        <div class="col-md-4 item-menu" data-categorias="${plato.categorias.join(' ')}">
+            <div class="card h-100 border-0 shadow-sm">
+                <img src="assets/${plato.imagen}" class="card-img-top" alt="${plato.nombre}">
+                <div class="card-body">
+                    <h5 class="card-title">${plato.nombre}</h5>
+                    <p class="card-text">${plato.descripcion}</p>
+                    <span class="fw-bold text-primary">$${plato.precio.toFixed(2)}</span>
+                    ${badgesHTML}
+                </div>
+            </div>
+        </div>
+        `;
+                contenedor.innerHTML += cardHTML;
+            });
+        }
+
+        function filtrarMenu(categoria) {
+            const items = document.querySelectorAll('.item-menu');
+
+            items.forEach(item => {
+                const categorias = item.getAttribute('data-categorias').split(' ');
+                if (categoria === 'todo' || categorias.includes(categoria)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            generarMenu();
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,114 @@
+html{
+    scroll-padding-top: 70px;
+}
+
+:root {
+    --azul-oceano: #1E3A8A;
+    --azul-cielo: #3B82F6;
+    --dorado-sol: #F59E0B;
+    --dorado-hover: #E67E22;
+    --verde-agua: #6EE7B7;
+    --blanco-nube: #FFF;
+    --gris-arena: #F5F5F4;
+}
+
+/* Tipos de textos */
+.text-azul-oceano {
+    color: var(--azul-oceano);
+}
+
+.text-azul-cielo {
+    color: var(--azul-cielo);
+}
+
+.text-dorado-sol {
+    color: var(--dorado-sol);
+}
+
+.text-verde-agua {
+    color: var(--verde-agua);
+}
+
+.text-blanco-nube {
+    color: var(--blanco-nube);
+}
+
+.text-gris-arena {
+    color: var(--gris-arena);
+}
+
+/* Fondos */
+
+.bg-azul-oceano {
+    background-color: var(--azul-oceano);
+}
+
+.bg-azul-cielo {
+    background-color: var(--azul-cielo);
+}
+
+.bg-dorado-sol {
+    background-color: var(--dorado-sol);
+}
+
+.bg-verde-agua {
+    background-color: var(--verde-agua);
+}
+
+.bg-blanco-nube {
+    background-color: var(--blanco-nube);
+}
+
+.bg-gris-arena {
+    background-color: var(--gris-arena);
+}
+
+
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    padding-top: 56px;
+    /* Para compensar el navbar fixed */
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Navbar */
+.navbar-item {
+    transition: 0.3s;
+}
+
+.navbar-item:hover {
+    transform: scale(1.1);
+}
+
+/* Inicio */
+.hero-section{
+    height: calc(93vh - 5px);
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.2)), url('img/fondo-marino.jpg');
+    background-size: cover;
+}
+
+.btn-dorado{
+    background-color: var(--dorado-sol);
+    color: var(--blanco-nube);
+    border: none;
+}
+
+.btn-dorado:hover, .btn-dorado:active{
+    background-color: var(--dorado-hover) !important;
+    border: none;
+}
+
+
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .navbar-item:hover {
+        transform: none;
+    }
+}
